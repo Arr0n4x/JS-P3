@@ -258,3 +258,26 @@ const h3js = document.getElementById("javascript");
 const h3 = document.querySelectorAll("h3");
 
 // h3.forEach((language) => console.log(language.dataset.lang));
+
+//-----------------------------------------------------------------------------
+// Les Regex
+//-----------------------------------------------------------------------------
+let mail = "from_scratch33@gmail.com";
+//console.log(mail.search(/frscceeceom/));
+
+//console.log(mail.replace(/from/, "de"));
+// console.log(mail.match(/SCratch/i));
+// console.log(mail.match(/[zug]/));
+// console.log(mail.match(/[12]/));
+
+//Tous les chiffres
+// console.log(mail.match(/\d/));
+
+// Matcher toutes les lettres
+// console.log(mail.match(/[a-z]/));
+
+// console.log(mail.match(/[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
+
+let separator = 265985448;
+
+console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
