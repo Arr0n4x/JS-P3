@@ -40,4 +40,43 @@ const init = {
 
 // fetch("data.json", init).then((res) => console.log(res));
 
-// CRUD => Create (POST), reand (GET), update (PUT), delete (delete)
+// CRUD => Create (POST), reand (GET), update (PUT), delete (DELETE)
+
+const init2 = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    pseudo: "From scratch",
+    message: "yo les gens",
+  }),
+  mode: "cors",
+  credentials: "same-origin",
+};
+
+document.querySelector("form").addEventListener("submit", () => {
+  fetch("http://localhost:3000/posts", init2).then(() =>
+    console.log("data envoyée")
+  );
+});
+
+//-----------------------
+//Asynchrone
+//-----------------------
+
+setTimeout(() => {
+  // console.log("test");
+}, 2000);
+
+//  Promise
+fetch("monlien").then((res) => res);
+
+// async/await
+async function fetchData() {
+  await fetch("monlien");
+  // attend que le await soit exécuté anvant de faire la suite
+  executeFonction();
+}
+
+const fetchData2 = async () => {};
