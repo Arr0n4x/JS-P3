@@ -70,7 +70,7 @@ setTimeout(() => {
 }, 2000);
 
 //  Promise
-fetch("monlien").then((res) => res);
+// fetch("monlien").then((res) => res);
 
 // async/await
 async function fetchData() {
@@ -80,3 +80,53 @@ async function fetchData() {
 }
 
 const fetchData2 = async () => {};
+
+//-----------
+// LE JSON
+//---------
+
+// Méthode .json() => méthode qui s'auto-résout en renvoyant le Body de la requete.
+
+fetch("data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    // Stringify => convertit en JSON
+    let settings = JSON.stringify(data);
+    // Parse => transforme json en object js
+    // console.log(JSON.parse(settings));
+  });
+
+//-----------------------
+//Web API
+//-----------------------
+
+//CLIENT STORAGE
+//-----------------------
+
+// Locale Storage
+localStorage.data = "Je stock la data";
+console.log(localStorage.data);
+localStorage.removeItem("data");
+
+const obj = {
+  name: "Denis",
+  age: 22,
+};
+
+//Il faut passer des chaines de caractères
+localStorage.user = JSON.stringify(obj);
+
+// console.log(JSON.parse(localStorage.user));
+
+//Session Storage
+sessionStorage.dataSettings = "55px";
+sessionStorage.clear();
+
+//-----------
+// Cookies
+//-----------
+
+document.cookie = "username=FromScratch";
+
+// Bonne pratique
+document.cookie = "pseudo=FS;path=/; max-age=450000; secure; samesite";
